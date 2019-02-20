@@ -1,0 +1,15 @@
+2019/02/20
+JavascriptというかJqueryというか・・・
+～.load()?みたいなやつでhtmlのロードとそのhtmlに適用したい関数を同時に引数にとれるんだが、
+このload()、実行がどうもその関数上の最後に呼び出されている模様
+
+例：
+function.addEventListener("load",function(){
+	
+	func1();
+	document.querySelector(".ID").load("A.html",func3());
+	func2();
+});
+みたいに書くと、func1->func2->func3の順に実行されるらしい・・・
+割と忘れがちかつはまりがちなところだ・・・
+（たいてい気づくまでにconsole.log()が大量に積み重なってる）
